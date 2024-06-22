@@ -29,7 +29,7 @@ const NodeDesign = ({ Icon, heading, inputTags, selectTags }) => {
   };
 
   return (
-    <div className="border-[5px] border-[#A9ABF7] rounded-md">
+    <div className="border-[5px] border-[#A9ABF7] rounded-md max-h-[500px]">
       <div className="p-2 max-h-fit w-[300px] rounded-sm border-2 border-[#7A7DF3]">
         <div className="flex items-center gap-2 text-[#7A7DF3]">
           <Icon />
@@ -47,22 +47,26 @@ const NodeDesign = ({ Icon, heading, inputTags, selectTags }) => {
                 />
             </label>
           ))}
-          <label className="mt-1 flex flex-col gap-2">
-            <span className="text-sm text-[#C8CACF]">{selectTags?.name}</span>
-            {selectTags && (
-              <select
-                value={inputType}
-                onChange={handleTypeChange}
-                className="border border-[#7A7DF3] rounded-md p-1"
-              >
-                {selectTags.value.map((option, index) => (
-                  <option key={index} value={option.value} className="p-5">
-                    {option.name}
-                  </option>
-                ))}
-              </select>
-            )}
-          </label>
+          {selectTags.map((ele)=>{
+            return(
+              <label className="mt-1 flex flex-col gap-2">
+              <span className="text-sm text-[#C8CACF]">{ele.name}</span>
+              {ele && (
+                <select
+                  value={inputType}
+                  onChange={handleTypeChange}
+                  className="border border-[#7A7DF3] rounded-md p-1"
+                >
+                  {ele.value.map((option, index) => (
+                    <option key={index} value={option.value} className="p-5">
+                      {option.name}
+                    </option>
+                  ))}
+                </select>
+              )}
+            </label>
+            )
+          })}
         </div>
       </div>
     </div>

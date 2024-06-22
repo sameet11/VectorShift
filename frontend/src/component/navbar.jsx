@@ -8,7 +8,7 @@ const Navbar=()=>{
         </button>
         {navElements.map((ele,id)=>{
             return(
-                <div className="flex items-center justify-center text-[#6C737F] text-sm font-semibold hover:text-[#9294F7] cursor-pointer">{ele}</div>
+                <div key={id} className={`flex items-center justify-center text-[#6C737F] text-sm font-semibold hover:text-[#9294F7] cursor-pointer ${id===0 ?'undefined':''}`}>{ele}</div>
             )
         })}
         </div>

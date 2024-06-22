@@ -1,7 +1,7 @@
 import { Handle, Position } from 'reactflow';
 import NodeDesign from './nodedesign';
 
-const BaseNode = ({ input, Icon, heading, inputTags, selectTags, output, children }) => {
+const BaseNode = ({ input, Icon, heading, inputTags, selectTags, output }) => {
   const handleStyle = {
     width: '15px',
     height: '15px',
@@ -20,9 +20,7 @@ const BaseNode = ({ input, Icon, heading, inputTags, selectTags, output, childre
           position={Position.Left}
         />
       ))}
-      <NodeDesign Icon={Icon} heading={heading} inputTags={inputTags} selectTags={selectTags}>
-        {children}
-      </NodeDesign>
+      <NodeDesign Icon={Icon} heading={heading} inputTags={inputTags} selectTags={selectTags}/>
       {output.map((obj, index) => (
         <Handle
           key={index}
