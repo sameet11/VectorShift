@@ -1,6 +1,5 @@
 // toolbar.js
 import { useState } from "react";
-import { SiOpenai } from "react-icons/si";
 import { DraggableNode } from "./component/draggableNode";
 import Navbar from "./component/navbar";
 import { MdInput } from "react-icons/md";
@@ -12,6 +11,7 @@ import { MdOutlinePlayCircle } from "react-icons/md";
 import { MdOutlineImage } from "react-icons/md";
 import { FaGoogle } from "react-icons/fa";
 import { IoMdMic } from "react-icons/io";
+import { SiOpenai } from "react-icons/si";
 export const PipelineToolbar = () => {
   const nodes = [
     { type: "customInput", label: "Input", icon: MdInput },
@@ -48,6 +48,10 @@ export const PipelineToolbar = () => {
         type:"speech",
         label:"Speech-text",
         icon:IoMdMic,
+    },{
+        type:"tts",
+        label:"TTS OpenAI",
+        icon:SiOpenai,
     }
   ];
 

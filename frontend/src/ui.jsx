@@ -11,6 +11,7 @@ import 'reactflow/dist/style.css';
 import { ImageGeneration } from './nodes/newNodes/Imageneration';
 import { GeminiNode } from './nodes/newNodes/gemini';
 import { SpeechNode } from './nodes/newNodes/speachNode';
+import { OpenAiTtsNode } from './nodes/newNodes/opensitts';
 
 const gridSize = 20;
 const proOptions = { hideAttribution: true };
@@ -22,7 +23,8 @@ const nodeTypes = {
   transformation: TransformationNode,
   imagegen:ImageGeneration,
   gemini:GeminiNode,
-  speech:SpeechNode
+  speech:SpeechNode,
+  tts:OpenAiTtsNode,
 };
 
 const selector = (state) => ({
